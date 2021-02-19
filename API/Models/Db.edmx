@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ApiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_gastos">
+          <Key>
+            <PropertyRef Name="id_gasto" />
+          </Key>
+          <Property Name="id_gasto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_gasto" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="valor_gasto" Type="decimal" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="pagado" Type="decimal" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="total" Type="decimal" Precision="16" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ApiModelStoreContainer">
+          <EntitySet Name="tb_gastos" EntityType="Self.tb_gastos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ApiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_gastos">
+          <Key>
+            <PropertyRef Name="id_gasto" />
+          </Key>
+          <Property Name="id_gasto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_gasto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="valor_gasto" Type="Decimal" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="pagado" Type="Decimal" Precision="16" Scale="0" Nullable="false" />
+          <Property Name="total" Type="Decimal" Precision="16" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ApiEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_gastos" EntityType="Self.tb_gastos" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ApiModelStoreContainer" CdmEntityContainer="ApiEntities1">
+          <EntitySetMapping Name="tb_gastos">
+            <EntityTypeMapping TypeName="ApiModel.tb_gastos">
+              <MappingFragment StoreEntitySet="tb_gastos">
+                <ScalarProperty Name="id_gasto" ColumnName="id_gasto" />
+                <ScalarProperty Name="nombre_gasto" ColumnName="nombre_gasto" />
+                <ScalarProperty Name="valor_gasto" ColumnName="valor_gasto" />
+                <ScalarProperty Name="pagado" ColumnName="pagado" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ApiModelStoreContainer" CdmEntityContainer="ApiEntities1">
+    <EntitySetMapping Name="tb_gastos">
+      <EntityTypeMapping TypeName="ApiModel.tb_gastos">
+        <MappingFragment StoreEntitySet="tb_gastos">
+          <ScalarProperty Name="id_gasto" ColumnName="id_gasto" />
+          <ScalarProperty Name="nombre_gasto" ColumnName="nombre_gasto" />
+          <ScalarProperty Name="valor_gasto" ColumnName="valor_gasto" />
+          <ScalarProperty Name="pagado" ColumnName="pagado" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
